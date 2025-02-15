@@ -1,20 +1,21 @@
 int bee = 100;
 public void setup(){
- size(1000,1000); 
- ellipseMode(CENTER);
+ size(1000,2000); 
+ noLoop();
 }
 public void draw(){
- circle(500,500,200); 
+ circle(500,500,1000); 
 }
 public void circle(int x, int y, int len){
   noFill();
   if(len <= bee){
- ellipse(x,y,len,len);
-  }
+    ellipse(x,y,len,len);
+}
   else{
-   circle(x + ((len)*(3/4)) ,y,len/2);
-   circle(x + (len/4),y - (len/4),len/2);
-      circle(x + (len/4), y + (len/4),len/2);
-         circle(x + (len/2), y - (len*(3/4)),len/2);
+   ellipse(x,y,len,len);
+   circle(x + len/4,y,len/2);
+   circle(x - len/4,y,len/2);
+   circle(x, y + len/4,len/2);
+   circle(x, y - len/4,len/2);
   }
 }
